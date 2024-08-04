@@ -57,12 +57,26 @@ export const IconsContainer = styled.ul`
 
 export const IconItem = styled.li``
 
-export const IconBtn = styled.button`
+export const BoldIconBtn = styled.button`
   background-color: transparent;
   cursor: pointer;
   border-width: 0px;
   outline: none;
-  color: #f1f5f9;
+  color: ${props => (props.boldstatus ? '#faff00' : ' #f1f5f9')};
+`
+export const ItalicIconBtn = styled.button`
+  background-color: transparent;
+  cursor: pointer;
+  border-width: 0px;
+  outline: none;
+  color: ${props => (props.italicstatus ? '#faff00' : ' #f1f5f9')};
+`
+export const UnderlineIconBtn = styled.button`
+  background-color: transparent;
+  cursor: pointer;
+  border-width: 0px;
+  outline: none;
+  color: ${props => (props.underlinestatus ? '#faff00' : ' #f1f5f9')};
 `
 
 export const HorizontalLine = styled.hr`
@@ -78,5 +92,9 @@ export const InputTextArea = styled.textarea`
   border-width: 0px;
   color: #f8fafc;
   font-family: 'Roboto';
-  font-style: underline;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: ${props => (props.boldstatus ? 'bold' : 'normal')};
+  font-style: ${props => (props.italicstatus ? 'italic' : 'normal')};
+  text-decoration: ${props => (props.underlinestatus ? 'underline' : 'normal')};
 `

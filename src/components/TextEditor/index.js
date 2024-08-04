@@ -15,13 +15,42 @@ import {
   IconsTextAreaContainer,
   IconsContainer,
   HorizontalLine,
-  IconBtn,
+  BoldIconBtn,
+  ItalicIconBtn,
+  UnderlineIconBtn,
   InputTextArea,
   IconItem,
 } from '../../styledComponents'
 
 class TextEditor extends Component {
+  state = {
+    boldStatus: false,
+    italicStatus: false,
+    underlineStatus: false,
+  }
+
+  onClickBoldIcon = () => {
+    this.setState(prevState => ({
+      boldStatus: !prevState.boldStatus,
+    }))
+  }
+
+  onClickItalicIcon = () => {
+    this.setState(prevState => ({
+      italicStatus: !prevState.italicStatus,
+    }))
+  }
+
+  onClickUnderlineIcon = () => {
+    this.setState(prevState => ({
+      underlineStatus: !prevState.underlineStatus,
+    }))
+  }
+
   render() {
+    const {boldStatus, italicStatus, underlineStatus} = this.state
+    console.log(boldStatus, italicStatus, underlineStatus)
+
     return (
       <AppContainer>
         <EditorCardContainer>
@@ -35,26 +64,39 @@ class TextEditor extends Component {
           <IconsTextAreaContainer>
             <IconsContainer>
               <IconItem>
-                <IconBtn data-testid="bold" onClick={this.onClickBoldIcon}>
+                <BoldIconBtn
+                  data-testid="bold"
+                  onClick={this.onClickBoldIcon}
+                  boldstatus={boldStatus}
+                >
                   <VscBold size={25} />
-                </IconBtn>
+                </BoldIconBtn>
               </IconItem>
               <IconItem>
-                <IconBtn data-testid="italic" onClick={this.onClickItalicIcon}>
+                <ItalicIconBtn
+                  data-testid="italic"
+                  onClick={this.onClickItalicIcon}
+                  italicstatus={italicStatus}
+                >
                   <GoItalic size={25} />
-                </IconBtn>
+                </ItalicIconBtn>
               </IconItem>
               <IconItem>
-                <IconBtn
+                <UnderlineIconBtn
                   data-testid="underline"
                   onClick={this.onClickUnderlineIcon}
+                  underlinestatus={underlineStatus}
                 >
                   <AiOutlineUnderline size={25} />
-                </IconBtn>
+                </UnderlineIconBtn>
               </IconItem>
             </IconsContainer>
             <HorizontalLine />
-            <InputTextArea type="text" />
+            <InputTextArea
+              boldstatus={boldStatus}
+              italicstatus={italicStatus}
+              underlinestatus={underlineStatus}
+            />
           </IconsTextAreaContainer>
         </EditorCardContainer>
       </AppContainer>
