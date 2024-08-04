@@ -45,20 +45,24 @@ export const IconsTextAreaContainer = styled.div`
   width: 50%;
   border-radius: 10px;
 `
-export const IconsContainer = styled.div`
+export const IconsContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 130px;
   margin: 10px;
+  list-style-type: none;
+  padding: 0px;
 `
+
+export const IconItem = styled.li``
 
 export const IconBtn = styled.button`
   background-color: transparent;
   cursor: pointer;
   border-width: 0px;
   outline: none;
-  color: #f8fafc;
+  color: #f1f5f9;
 `
 
 export const HorizontalLine = styled.hr`
@@ -66,7 +70,13 @@ export const HorizontalLine = styled.hr`
   margin: 0px;
 `
 
-export const InputTextArea = styled.input`
+export const InputTextArea = styled.textarea`
   background-color: transparent;
   outline: none;
+  width: 100%;
+  height: 85%;
+  border-width: 0px;
+  color: #f8fafc;
+  font-family: 'Roboto';
+  font-style: underline;
 `

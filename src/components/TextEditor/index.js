@@ -17,6 +17,7 @@ import {
   HorizontalLine,
   IconBtn,
   InputTextArea,
+  IconItem,
 } from '../../styledComponents'
 
 class TextEditor extends Component {
@@ -33,18 +34,27 @@ class TextEditor extends Component {
           </HeadingImageContainer>
           <IconsTextAreaContainer>
             <IconsContainer>
-              <IconBtn data-testid="bold">
-                <VscBold size={25} />
-              </IconBtn>
-              <IconBtn data-testid="italic">
-                <GoItalic size={25} />
-              </IconBtn>
-              <IconBtn data-testid="underline">
-                <AiOutlineUnderline size={25} />
-              </IconBtn>
+              <IconItem>
+                <IconBtn data-testid="bold" onClick={this.onClickBoldIcon}>
+                  <VscBold size={25} />
+                </IconBtn>
+              </IconItem>
+              <IconItem>
+                <IconBtn data-testid="italic" onClick={this.onClickItalicIcon}>
+                  <GoItalic size={25} />
+                </IconBtn>
+              </IconItem>
+              <IconItem>
+                <IconBtn
+                  data-testid="underline"
+                  onClick={this.onClickUnderlineIcon}
+                >
+                  <AiOutlineUnderline size={25} />
+                </IconBtn>
+              </IconItem>
             </IconsContainer>
             <HorizontalLine />
-            <InputTextArea type="textarea" row={12} col={12} />
+            <InputTextArea type="text" />
           </IconsTextAreaContainer>
         </EditorCardContainer>
       </AppContainer>
